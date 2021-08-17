@@ -7,11 +7,11 @@ from sklearn import preprocessing
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-
+import cv2
 data = np.load('Dataset/mnist.npz')#加载数据
 
 num_class=10#类别数目
-input_shape=(28,28,1)#输入的数据尺寸
+input_shape=(32,32,1)#输入的数据尺寸
 
 train_x=[]
 train_y=[]
@@ -21,14 +21,16 @@ test_y=[]
 print('loading train_data....')
 id=0
 for val in tqdm(data['x_train']):
-    train_x.append(val.reshape(input_shape))
+    img=cv2.resize(val,(input_shape[0],input_shape[1]))#修改图像尺寸
+    train_x.append(img.reshape(input_shape))#修改读入的数据格式
     train_y.append(data['y_train'][id])
     id+=1
 
 print('loading test_data....')
 id=0
 for val in tqdm(data['x_test']):
-    test_x.append(val.reshape(input_shape))
+    img=cv2.resize(val,(input_shape[0],input_shape[1]))#修改图像尺寸
+    test_x.append(img.reshape(input_shape))#修改读入的数据格式
     test_y.append(data['y_test'][id])
     id+=1
 

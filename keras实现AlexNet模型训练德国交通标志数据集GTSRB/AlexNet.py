@@ -26,7 +26,7 @@ import cv2
 X_data = []
 Y_data = []
 
-input_shape = (150,150,3)#输入数据格式
+input_shape=(227,227,3)#3通道图像数据
 num_class = 43#数据类别数目
 
 
@@ -150,5 +150,6 @@ plt.ylabel("Loss")#纵坐标名
 plt.show()
 #图像保存方法
 plt.savefig('AlexNet loss.png')
+
 
 
