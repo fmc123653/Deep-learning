@@ -1,0 +1,1 @@
+数据集来源天池竞赛，新闻文本分类：https://tianchi.aliyun.com/competition/entrance/531810/introduction?spm=5176.12281973.1005.2.4b9d1f54ukdVNY
